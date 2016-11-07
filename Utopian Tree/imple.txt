@@ -1,0 +1,36 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main(){
+    int t;
+    cin >> t;
+    for(int a0 = 0; a0 < t; a0++)
+    {
+        int n;
+        cin >> n;
+        bool spring=1;
+        int h=1;
+        for(int j=0;j<n;j++)
+        {
+            if(spring==1)
+            {
+                h=h*2;
+                spring = 0;
+            }
+            else
+            {
+                h=h+1;
+                spring = 1;
+            }
+            
+        }
+        cout<<h<<endl;
+        
+    }
+    return 0;
+}

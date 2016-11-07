@@ -1,0 +1,27 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    int t;
+    cin >> t;
+    for(int a0 = 0; a0 < t; a0++){
+        int n;
+        int c;
+        int m;
+        cin >> n >> c >> m;  //6,2,2
+        int total = n/c;  //3
+        int wrapper=total;  //3
+        while(wrapper>=m)
+        {
+            wrapper=wrapper-m;  //
+            total++;
+            wrapper++;
+        }
+        cout<<total<<endl;;
+    }
+    return 0;
+}

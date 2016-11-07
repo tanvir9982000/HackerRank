@@ -1,0 +1,49 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int t;
+    cin>>t;
+    for(int Ti=0;Ti<t;Ti++)
+    {
+        int n;
+        long long int sum=0;
+        cin>>n;
+        vector<int> a(n);
+        for(int Ni=0;Ni<n;Ni++){
+            cin>>a[Ni];
+            sum+=a[Ni];
+        }
+        
+        if(n == 1) 
+        {
+            cout<<"YES\n"; 
+            continue;
+        }
+        
+        long long int sl=0, sr=sum-a[0];
+        bool found = false; 
+        for (int i=1;i<n;i++)
+        {
+            sl=sl+a[i-1];
+            sr=sr-a[i];
+
+            if(sl==sr) 
+            {
+                cout<<"YES\n"; 
+                found = true; 
+                break;
+            }
+
+        }
+        if (found==false) cout<<"NO\n"; 
+        
+    }
+    return 0;
+}

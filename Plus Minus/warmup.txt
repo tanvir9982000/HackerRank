@@ -1,0 +1,30 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main(){
+    int n;
+    int P=0,N=0,Z=0;
+    double pd, nd, zd;
+    cin >> n;
+    vector<int> arr(n);
+    for(int arr_i = 0;arr_i < n;arr_i++)
+    {
+        cin >> arr[arr_i];
+        if (arr[arr_i]==0)  Z++;
+        else if (arr[arr_i]<0)  N++;
+        else P++;
+    }
+    pd = (double)P/n;
+    nd = (double)N/n;
+    zd = (double)Z/n;
+    cout<<pd<<endl;
+    cout<<nd<<endl;
+    cout<<zd<<endl;
+    
+    return 0;
+}

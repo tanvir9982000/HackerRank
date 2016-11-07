@@ -1,0 +1,36 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    string line;
+    getline (std::cin,line);
+    int length=line.length();
+    if(length>1000) 
+    {
+        cout<<"not pangram";
+        return 0;
+    }
+    int letterfreq[26]={};
+    for(int i=0;i<length;i++)
+    {
+        if( toupper(line[i]) >='A' && toupper(line[i]) <='Z')
+        {
+            letterfreq[toupper(line[i])-'A']++;
+        }
+    }
+    for(int i=0;i<26;i++)
+    {
+        if(letterfreq[i]==0) {
+            cout<<"not pangram";
+            return 0;
+        }
+    }
+    cout<<"pangram";
+    return 0;
+}

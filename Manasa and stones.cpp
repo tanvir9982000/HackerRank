@@ -1,5 +1,5 @@
 /*
-Problem: https://www.hackerrank.com/challenges/manasa-and-stones
+Problem description: https://www.hackerrank.com/challenges/manasa-and-stones
 Tanvir Rahman
 */
 

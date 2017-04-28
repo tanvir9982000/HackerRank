@@ -1,0 +1,38 @@
+/*
+https://www.hackerrank.com/challenges/the-birthday-bar
+Algorithm: intermediate
+*/
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int getWays(vector < int > s, int d, int m){
+    // Complete this function
+    int freq=0;
+    for(int i=0;i<=s.size()-m;i++){
+        int sum=0;
+        for(int j=0;j<m;j++){
+           sum+=s[i+j]; 
+           //cout<<"i="<<i<<" j="<<j<<" sum="<<sum<<endl; 
+        }
+        if(sum==d)
+            freq++;
+            
+    }
+    return freq;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> s(n);
+    for(int s_i = 0; s_i < n; s_i++){
+       cin >> s[s_i];
+    }
+    int d;
+    int m;
+    cin >> d >> m;
+    int result = getWays(s, d, m);
+    cout<<result<<endl;
+    return 0;
+}

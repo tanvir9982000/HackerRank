@@ -1,0 +1,53 @@
+/*
+https://www.hackerrank.com/challenges/breaking-best-and-worst-records
+Problem description: Find the frequency of record breaks (both highest and lowest record break). Scores are stored 
+in an integer array. Number of scores are given at the beginning.
+sample input:
+9
+10 5 20 20 4 5 2 25 1
+sample output:
+2 4
+explanation: 
+highest record breaks at 2th, 7th index, frequency = 2
+lowest record breaks at 1st, 4th, 6th, 8th index. frequency = 4
+*/
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector < int > getRecord(vector < int > s){
+    int high=s[0];
+    int low = s[0];
+    int hf=0,lf=0;
+    for(int i=1;i<s.size();i++){
+        if(s[i]>high){
+            high=s[i];
+            hf++;
+        }
+        if(s[i]<low){
+            low=s[i];
+            lf++;
+        }
+    }
+    vector<int> result(2);
+    result[0]=hf;
+    result[1]=lf;
+    return result;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> s(n);
+    for(int s_i = 0; s_i < n; s_i++){
+       cin >> s[s_i];
+    }
+    vector < int > result = getRecord(s);
+    string separator = "", delimiter = " ";
+    for(auto val: result) {
+        cout<<separator<<val;
+        separator = delimiter;
+    }
+    cout<<endl;
+    return 0;
+}
